@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Hotel_DDD/1.0.0": {
+        "runtime": {
+          "Hotel_DDD.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Hotel_DDD/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
