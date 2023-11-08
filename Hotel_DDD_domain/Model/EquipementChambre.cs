@@ -1,4 +1,4 @@
-﻿namespace Hotel_DDD.model;
+﻿namespace Hotel_DDD.Model;
 
 public class EquipementChambre
 {
