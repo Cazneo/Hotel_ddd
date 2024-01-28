@@ -2,5 +2,7 @@
 
 public class ChambreDto
 {
-    
+    public int ChambreID { get; set; }
+    public int TypeChambreID { get; set; }
+
 }

@@ -1,56 +1,52 @@
 ﻿using AutoMapper;
-using Hotel_DDD_Domain.Repository;
 using Hotel_DDD_domain.DTOs;
+using Hotel_DDD_Domain.Repository;
 
-
-namespace Hotel_DDD_domain.Service
+public class UserService
 {
-    public class UserService
+    private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
+
+    public UserService(IUserRepository userRepository, IMapper mapper)
     {
-        private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
+        _userRepository = userRepository;
+        _mapper = mapper;
+    }
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+    public async Task<UserDto> CreateUserAsync(string fullName, string emailAddress, string phoneNumber, string uniqueIdentifier)
+    {
+        bool emailExists = await _userRepository.DoesEmailExistAsync(emailAddress);
+        if (emailExists)
         {
-            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            throw new ApplicationException("The email address is already in use by another user.");
         }
 
-        public UserDto CreateUser(string fullName, string emailAddress, string phoneNumber, string uniqueIdentifier)
+        bool phoneNumberExists = await _userRepository.DoesPhoneNumberExistAsync(phoneNumber);
+        if (phoneNumberExists)
         {
-            if (_userRepository.DoesEmailExist(emailAddress))
-            {
-                throw new ApplicationException("The email address is already in use by another user.");
-            }
-
-            if (_userRepository.DoesPhoneNumberExist(phoneNumber))
-            {
-                throw new ApplicationException("The phone number is already in use by another user.");
-            }
-
-            var userDto = new UserDto
-            {
-                FullName = fullName,
-                EmailAddress = emailAddress,
-                PhoneNumber = phoneNumber,
-                UniqueIdentifier = uniqueIdentifier
-            };
-
-            _userRepository.Create(userDto);
-
-            return userDto;
+            throw new ApplicationException("The phone number is already in use by another user.");
         }
 
-        public UserDto GetUserById(int userId)
+        var userDto = new UserDto
         {
-            var userDto = _userRepository.GetUserById(userId);
-            return userDto;
-        }
+            FullName = fullName,
+            EmailAddress = emailAddress,
+            PhoneNumber = phoneNumber,
+            UniqueIdentifier = uniqueIdentifier
+        };
 
-        public IList<UserDto> GetUsers()
-        {
-            var userDtos = _userRepository.GetAllUsers();
-            return userDtos.ToList();
-        }
+        await _userRepository.CreateAsync(userDto);
+        return userDto;
+    }
+
+    public async Task<UserDto> GetUserByIdAsync(int userId)
+    {
+        return await _userRepository.GetUserByIdAsync(userId);
+    }
+
+    public async Task<IList<UserDto>> GetUsersAsync()
+    {
+        var users = await _userRepository.GetAllUsersAsync();
+        return users.ToList();
     }
 }

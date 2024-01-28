@@ -1,8 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel_DDD_infrastructure", "Hotel_DDD_infrastructure\Hotel_DDD_infrastructure.csproj", "{F24AAED8-7739-4C36-997C-36C09DC9DD1C}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel_DDD_domain", "Hotel_DDD_domain\Hotel_DDD_domain.csproj", "{D1DF772D-EF32-4350-B0AC-F0BD7DF22050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel_DDD_domain", "Hotel_DDD_domain\Hotel_DDD_domain.csproj", "{D1DF772D-EF32-4350-B0AC-F0BD7DF22050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User_API", "User_API\User_API.csproj", "{BBE02ABB-2A65-4D8E-903D-937C288AD25C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservation_API", "Reservation_API\Reservation_API.csproj", "{4313F0AC-C55D-4016-8034-259F4B97CA7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chambre_API", "Chambre_API\Chambre_API.csproj", "{CB6162D2-4F14-45AA-BC01-DDE93FC6813F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment_API", "Payment_API\Payment_API.csproj", "{D40DA6FF-6D1B-4A91-9370-1E4D593428DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +19,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F24AAED8-7739-4C36-997C-36C09DC9DD1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F24AAED8-7739-4C36-997C-36C09DC9DD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F24AAED8-7739-4C36-997C-36C09DC9DD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F24AAED8-7739-4C36-997C-36C09DC9DD1C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D1DF772D-EF32-4350-B0AC-F0BD7DF22050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D1DF772D-EF32-4350-B0AC-F0BD7DF22050}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1DF772D-EF32-4350-B0AC-F0BD7DF22050}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1DF772D-EF32-4350-B0AC-F0BD7DF22050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE02ABB-2A65-4D8E-903D-937C288AD25C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE02ABB-2A65-4D8E-903D-937C288AD25C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE02ABB-2A65-4D8E-903D-937C288AD25C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE02ABB-2A65-4D8E-903D-937C288AD25C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4313F0AC-C55D-4016-8034-259F4B97CA7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4313F0AC-C55D-4016-8034-259F4B97CA7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4313F0AC-C55D-4016-8034-259F4B97CA7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4313F0AC-C55D-4016-8034-259F4B97CA7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB6162D2-4F14-45AA-BC01-DDE93FC6813F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB6162D2-4F14-45AA-BC01-DDE93FC6813F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB6162D2-4F14-45AA-BC01-DDE93FC6813F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB6162D2-4F14-45AA-BC01-DDE93FC6813F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D40DA6FF-6D1B-4A91-9370-1E4D593428DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D40DA6FF-6D1B-4A91-9370-1E4D593428DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D40DA6FF-6D1B-4A91-9370-1E4D593428DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D40DA6FF-6D1B-4A91-9370-1E4D593428DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DA06E2D-13E5-4601-9125-DFD517055AA5}
 	EndGlobalSection
 EndGlobal

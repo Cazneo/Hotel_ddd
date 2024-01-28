@@ -1,12 +1,11 @@
-﻿namespace Hotel_DDD.Model;
-
-public class User
+﻿namespace Hotel_DDD_domain.Model
 {
-    public int UtilisateurID { get; set; }
-    public string NomComplet { get; set; }
-    public string AdresseMail { get; set; }
-    public string NumeroTelephone { get; set; }
-    public string IdentifiantUnique { get; set; }
-
-    
+    public class User
+    {
+        public int UserId { get; set; }
+        public string FullName { get; set; }
+        public string EmailAddress { get; set; }
+        public string PhoneNumber { get; set; }
+        public string UniqueIdentifierUid { get; set; }
+    }
 }

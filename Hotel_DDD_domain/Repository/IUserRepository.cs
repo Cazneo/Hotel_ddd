@@ -1,14 +1,17 @@
-﻿using Hotel_DDD_domain.Model;
+﻿using System.Collections.Generic;
+using Hotel_DDD_domain.DTOs;
 
 namespace Hotel_DDD_Domain.Repository
 {
     public interface IUserRepository
     {
-        User GetUserById(int userId);
-        bool DoesEmailExist(string emailAddress);
-        bool DoesPhoneNumberExist(string phoneNumber);
-        void Create(User user);
-        void Update(User user);
-        void Delete(User user);
+        Task<UserDto> GetUserByIdAsync(int userId);
+        Task<bool> DoesEmailExistAsync(string emailAddress);
+        Task<bool> DoesPhoneNumberExistAsync(string phoneNumber);
+        Task CreateAsync(UserDto userDto);
+        Task UpdateAsync(UserDto userDto);
+        Task DeleteAsync(int userId);
+        Task<IEnumerable<UserDto>> GetAllUsersAsync();
     }
 }
+    

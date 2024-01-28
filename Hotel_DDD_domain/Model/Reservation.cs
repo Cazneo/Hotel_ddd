@@ -1,5 +1,4 @@
-﻿namespace Hotel_DDD.Model;
-
+﻿namespace Hotel_DDD_domain.Model;
 public class Reservation
 {
     public int ReservationID { get; set; }
